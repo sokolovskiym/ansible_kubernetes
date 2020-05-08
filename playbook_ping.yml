@@ -1,0 +1,9 @@
+---
+- name: test connection
+#  hosts: "{{ HOSTS }}"
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: ping
+    ping:

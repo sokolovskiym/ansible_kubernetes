@@ -1,0 +1,22 @@
+---
+# defaults file for deploy_docker
+pkgs_remove_old:
+       - docker
+       - docker-engine
+       - docker.io
+       - containerd
+       -  runc
+pkgs_docker:
+       - docker-ce
+       - docker-ce-cli
+       - containerd.io
+pkgs_repositiry:
+       - apt-transport-https
+       - ca-certificates
+       - curl
+       - gnupg-agent
+       - software-properties-common 
+pkgs_kubernetes:
+       - kubelet
+       - kubeadm
+       - kubectl

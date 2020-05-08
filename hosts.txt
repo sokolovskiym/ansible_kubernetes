@@ -1,0 +1,4 @@
+[cloud]
+kube-master ansible_host=104.198.200.139
+kube-node1 ansible_host=34.69.156.146
+kube-node2 ansible_host=34.71.198.98

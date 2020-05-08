@@ -1,0 +1,3 @@
+---
+ansible_user : spgadmin
+ansible_ssh_key_private_file : ~/.ssh/id_rsa

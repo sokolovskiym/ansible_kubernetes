@@ -1,0 +1,7 @@
+---
+- name: shutdown
+  hosts: all
+  become: yes
+  
+  tasks:
+   - shell: shutdown -t 0

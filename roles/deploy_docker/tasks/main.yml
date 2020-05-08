@@ -1,0 +1,46 @@
+---
+# tasks file for deploy_docker
+  - name: update packages
+    apt:
+     update_cache: yes
+     upgrade: 'yes'
+
+  - name: remove old version
+    yum: name={{ pkgs_remove_old }} state=absent
+
+  - name: install additional packages
+    yum: name={{ pkgs_repositiry }} state=latest
+
+  - name: getting key
+    apt_key: url=https://download.docker.com/linux/ubuntu/gpg
+       
+  - name: adding repos
+    apt_repository:
+     repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ansible_distribution_release}} stable
+
+  - name: update packages after adding repository
+    apt:
+     update_cache: yes
+     upgrade: 'yes'
+
+  - name: install docker
+    yum: name={{ pkgs_docker }} state=latest
+
+  - name: adding current user to docker group
+    shell: 'usermod -aG docker $(whoami)'
+
+  - name: getting key for kubernetes
+    apt_key: url=https://packages.cloud.google.com/apt/doc/apt-key.gpg
+
+  - name: adding repos kubernetes
+    apt_repository:
+     repo: deb [arch=amd64] https://apt.kubernetes.io/ kubernetes-xenial main
+
+  - name: update packages after adding repository kubernetes
+    apt:
+     update_cache: yes
+     upgrade: 'yes'
+  
+  - name: install kubernetes
+    yum: name={{ pkgs_kubernetes }} state=latest
+
