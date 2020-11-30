@@ -12,7 +12,9 @@ $ sudo apt upgrade
 After system update you should clone this repo and edit some files:
 
 Edit file hosts.txt with your own server's IP addresses
+
 Edit file /group_vars/cloud with your own "ansible_user" and path to the "ansible_ssh_key_private_file"
+
 Enjoy! :)
 
 **Note!**
