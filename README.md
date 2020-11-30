@@ -2,7 +2,9 @@ README.md
 
 **DEAR ALL!**
 All actions bellow should be prepared **before** installations process will start:
+
 $ sudo apt update
+
 $ sudo apt upgrade
 
 *Tested on Ubuntu 18.04 TLS*
