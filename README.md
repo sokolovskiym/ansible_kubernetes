@@ -1,3 +1,10 @@
+README.md
+
+**DEAR ALL!**
+All actions bellow should be prepared **before** installations process will start:
+1. $ sudo apt update
+2. $ sudo apt upgrade
+
 *Tested on Ubuntu 18.04 TLS*
 
 Howto use it:
